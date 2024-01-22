@@ -73,6 +73,16 @@ text-transform: uppercase;
 .theme-menu__button:disabled::before {
   content: '▶';
   opacity: 0.6;
+  animation: arrow 0.5s infinite ease-in-out normal;
+  }
+
+@keyframes arrow {
+  from {
+    transform: translateX(0);
+  } 
+  to {
+    transform: translateX(4px);
+  }
 }
 
 .theme-menu__button:hover {
@@ -173,4 +183,19 @@ text-transform: uppercase;
   margin-inline-end: 25px;
   font-family: var(--accent-font);
   font-size: 14px;
+}
+
+.card__icon-button {
+  background-color: var(--bg-color);
+  padding: 12.5px 37px;
+  
+  inline-size: 60px;
+  block-size: 40px;
+  justify-self: end;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
