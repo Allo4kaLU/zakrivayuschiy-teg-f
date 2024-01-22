@@ -75,8 +75,39 @@ text-transform: uppercase;
   opacity: 0.6;
 }
 
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  inline-size: 0%;
+  block-size: 3px;
+  margin-block-start: 3px;
+  background-color: var(--accent-color);
+  transition: ease 0.3s;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible::after {
+  inline-size: 100%;
+}
+
 .theme-menu__button:disabled {
   opacity: 0.6;
+  pointer-events: none;
+}
+
+@keyframes {
+.theme-menu__button:disabled::before {
+  transform: translate(0% 0% 0%);
+}
 }
 
 .card {
@@ -85,9 +116,43 @@ text-transform: uppercase;
   display: grid;
 }
 
+.card__img-label {
+  display: flex;
+  background-blend-mode: hard-light;
+}
+
 .card__img {
   inline-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
+  
 }
+
+.card__label {
+  position: absolute;
+  z-index: 1;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.5; 
+  mix-blend-mode: hard-light;
+  text-shadow: 0 0 10px var(--bg-color);
+   
+  margin-block-start: 23px;
+  margin-inline-end: 11px;
+  justify-content: end;
+  text-shadow:
+    -1px 0 var(--bg-color), 
+   0 1px var(--bg-color), 
+   1px 0 var(--bg-color), 
+   0 -1px var(--bg-color);
+}
+
+@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+  .card__label {
+        -webkit-text-stroke: 1px var(--bg-color);
+        text-stroke: 1px var(--bg-color);
+        text-shadow: none;
+    }
+} 
 
 .card__title {
   padding: 4px 10px 6px 10px;
@@ -100,7 +165,7 @@ text-transform: uppercase;
   margin: 25px;
 }
 
-.card__button {
+.card__like-button {
   background-color: var(--bg-color);
   padding: 12.5px 37px;
   margin-block-end: 25px;
