@@ -18,16 +18,16 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--mine-font), sans-serif;
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: "wght" 400;
   color: var(--accent-color);
-  background-image: var(--bg-image);background-size: cover;
+  background-image: var(--bg-image);
+  background-size: cover;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   display: grid;
   justify-content: center;
   align-content: center;
-
 }
 
 .header {
@@ -67,27 +67,20 @@
 }
 
 .theme-menu__button {
-background-color: inherit;
-border: none;
-font-size: 14px;
-text-transform: uppercase;
+  background-color: inherit;
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .theme-menu__button:disabled::before {
-  content: '▶';
-  position: absolute;  
+  content: "▶";
+  position: absolute;
   opacity: 0.6;
   animation: arrow 0.5s infinite ease-in-out normal;
-  }
+}
 
-  @keyframes arrow {
-    from {
-      transform: translateX(-20px);
-    } 
-    to {
-      transform: translateX(-16px);
-    }
-  }
+
 
 .theme-menu__button:hover {
   opacity: 0.6;
@@ -95,7 +88,7 @@ text-transform: uppercase;
 }
 
 .theme-menu__button::after {
-  content: '';
+  content: "";
   display: block;
   inline-size: 0%;
   block-size: 3px;
@@ -133,7 +126,6 @@ text-transform: uppercase;
 
 .card__img {
   inline-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
-  
 }
 
 .card__label {
@@ -142,39 +134,35 @@ text-transform: uppercase;
   font-family: var(--accent-font);
   font-size: 14px;
   text-transform: uppercase;
-  opacity: 0.5; 
+  opacity: 0.5;
   mix-blend-mode: hard-light;
   text-shadow: 0 0 10px var(--bg-color);
-   
+
   margin-block-start: 23px;
   margin-inline-end: 11px;
   justify-content: end;
-  text-shadow:
-    -1px 0 var(--bg-color), 
-   0 1px var(--bg-color), 
-   1px 0 var(--bg-color), 
-   0 -1px var(--bg-color);
+  text-shadow: -1px 0 var(--bg-color), 0 1px var(--bg-color),
+    1px 0 var(--bg-color), 0 -1px var(--bg-color);
 }
 
-@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+@supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
   .card__label {
-        -webkit-text-stroke: 1px var(--bg-color);
-        text-stroke: 1px var(--bg-color);
-        text-shadow: none;
-    }
-} 
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
+    text-shadow: none;
+  }
+}
 
 .card__title {
   padding: 6px 24px 3px 10px;
   font-size: 18px;
-  font-weight: 700;
+  font-variation-settings: "wdht" 700;
   font-family: var(--mine-font), sans-serif;
 }
 
 .card__text {
   margin: 25px;
 }
-
 
 .card__buttons {
   display: flex;
@@ -185,10 +173,11 @@ text-transform: uppercase;
 .card__icon-button {
   background-color: var(--bg-color);
   margin-block-end: 25px;
-  border: none;  
-  inline-size: 60px;
-  block-size: 40px;
- 
+  border: none;
+  inline-size: 38px;
+  block-size: 38px;
+  margin-inline-end: 10px;
+  display: flex;
 }
 
 .card__like-button {
@@ -204,7 +193,6 @@ text-transform: uppercase;
 .footer {
   inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
   block-size: clamp(14.75rem, 15.3222rem + -2.4413vw, 13.125rem);
-   
   display: grid;
   justify-content: center;
   border-block-start: 2px solid var(--accent-color);
@@ -226,25 +214,62 @@ text-transform: uppercase;
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: 90%;
+  position: relative;
+}
+
+.button__text {
+  position: relative;
+}
+
+.buttons {
+  position: relative;
+  border: none;
+  outline: 2px solid var(--accent-color);
 }
 
 .buttons:focus {
   outline: none;
+  border: 2px solid var(--accent-color);
   box-shadow: 2px 2px 0 var(--accent-color);
   transition: linear 0.3s;
 }
 
-.buttons::after {
+.buttons::before {
   content: '';
   position: absolute;
   inset: 0;
+  block-size: 100%;
   background-color: var(--accent-color);
-  z-index: -1;
-  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.buttons:hover::before {
+  transform: scaleX(1);  
 }
 
 .buttons:hover {
-  transform: translateX(0);
-  transition: 0.5s ease-in-out;
-  color: var(--bg-color);
+ color: var(--bg-color);
+}
+
+.buttons:hover .footer__floppy {
+  fill: var(--bg-color);
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  transition: 0.3s ease;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.footer__floppy {
+  fill: var(--accent-color);
 }
