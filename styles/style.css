@@ -116,6 +116,7 @@
   background-color: var(--bg-color);
   display: grid;
   outline: 2px solid var(--accent-color);
+  margin-block-end: 57px;
 }
 
 .card__img-label {
@@ -313,4 +314,32 @@
 
 .dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
+}
+
+.card__img-first {
+  filter: brightness(50%);
+}
+
+.card__img-second {
+  filter: contrast(2000%);
+}
+
+.card__img-third {
+  filter:saturate(30%)
+}
+
+.card__img-fourth {
+  filter: invert(90%);
+}
+
+.card__img-fifth {
+  filter: grayscale(90%);
+}
+
+.card__img-sixth {
+  filter: blur(0.7rem);
+}
+
+.card__img-seventh {
+  filter: hue-rotate(-90deg) sepia(20%);
 }
