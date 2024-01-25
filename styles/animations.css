@@ -14,78 +14,76 @@
 */
 
 @keyframes arrow {
-    from {
-      transform: translateX(-20px);
-    }
-    to {
-      transform: translateX(-16px);
-    }
+  from {
+    transform: translateX(-20px);
   }
+  to {
+    transform: translateX(-16px);
+  }
+}
 
 .heart:hover {
-    cursor: pointer;
+  cursor: pointer;
 
-    .core {
-        fill: var(--accent-color);
-        transition: fill 0s linear 0.3s;
-        
-    }
-    .main-body {
-        fill: var(--accent-color);
-        transition: fill 0.05s linear 0.3s;
-    }
+  .core {
+    fill: var(--accent-color);
+    transition: fill 0s linear 0.3s;
+  }
+  .main-body {
+    fill: var(--accent-color);
+    transition: fill 0.05s linear 0.3s;
+  }
 }
 
 .heart:active {
-    .core {
-        fill: var(--heart-color);
-        transition: fill 0s linear 0.3s;
-    }
-    .main-body {
-        fill: var(--heart-color);
-        transition: fill 0.05s linear 0.3s;
-    }
+  .core {
+    fill: var(--heart-color);
+    transition: fill 0s linear 0.3s;
+  }
+  .main-body {
+    fill: var(--heart-color);
+    transition: fill 0.05s linear 0.3s;
+  }
 }
 
 .like-icon.is-liked {
-    .core {
-        fill: var(--heart-color);
-        transition: fill 0s linear 0.3s;
-    }
-    .main-body {
-        fill: var(--heart-color);
-        transition: fill 0.05s linear 0.3s;
-    }
-    .contour {
-        fill: var(--heart-color);
-    }
-   
-    .sparks {
-        animation: sparks 0.3s ease-in 0.3s 1 alternate;
-        
-        transform: scale(110%);
-        transition: opacity 3s;
-    }
-    
-    .heart {
+  .core {
+    fill: var(--heart-color);
+    transition: fill 0s linear 0.3s;
+  }
+  .main-body {
+    fill: var(--heart-color);
+    transition: fill 0.05s linear 0.3s;
+  }
+  .contour {
+    fill: var(--heart-color);
+  }
+
+  .sparks {
+    animation: sparks 0.3s ease-in 0.3s 1 alternate;
+    transform: scale(110%);
+    transition: opacity 3s;
+  }
+
+  .heart {
     animation: big-heart 0.3s ease-in 0.1s 1 alternate;
-    }
+  }
 }
 
 @keyframes big-heart {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.5); 
-    }
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
 }
 
 @keyframes sparks {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

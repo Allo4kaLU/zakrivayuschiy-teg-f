@@ -9,9 +9,20 @@
   --h-text-weight: 785;
   --bg-color: #000;
   --accent-color: #00cc14;
-  --bg-image: repeating-linear-gradient(to right, #000 0, #000 2px, transparent 2px, transparent 4px),
-repeating-linear-gradient(#000 0, #000 2px, transparent 2px, transparent 4px),
-linear-gradient(#007f0c, #004306);
+  --bg-image: repeating-linear-gradient(
+      to right,
+      #000 0,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      #000 0,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#007f0c, #004306);
 }
 
 :root.theme-light {
@@ -19,9 +30,20 @@ linear-gradient(#007f0c, #004306);
   --h-text-weight: 700;
   --bg-color: #fff;
   --accent-color: #000;
-  --bg-image: repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
-repeating-linear-gradient(#d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
-linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
+  --bg-image: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,8 +52,19 @@ linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
     --h-text-weight: 785;
     --bg-color: #000;
     --accent-color: #00cc14;
-    --bg-image: repeating-linear-gradient(to right, #000 0, #000 2px, transparent 2px, transparent 4px),
-repeating-linear-gradient(#000 0, #000 2px, transparent 2px, transparent 4px),
-linear-gradient(#007f0c, #004306);
+    --bg-image: repeating-linear-gradient(
+        to right,
+        #000 0,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        #000 0,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(#007f0c, #004306);
   }
 }
