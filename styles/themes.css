@@ -23,6 +23,7 @@
       transparent 4px
     ),
     linear-gradient(#007f0c, #004306);
+  --blend-color: #00cc14;
 }
 
 :root.theme-light {
@@ -44,6 +45,7 @@
       transparent 4px
     ),
     linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
+  --blend-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -66,5 +68,6 @@
         transparent 4px
       ),
       linear-gradient(#007f0c, #004306);
+    --blend-color: #00cc14;
   }
 }

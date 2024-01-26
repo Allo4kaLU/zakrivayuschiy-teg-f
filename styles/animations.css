@@ -22,60 +22,63 @@
   }
 }
 
-.heart:hover {
+.heart:hover .core {
   cursor: pointer;
-
-  .core {
-    fill: var(--accent-color);
-    transition: fill 0.3s linear 0s;
-  }
-  .main-body {
-    fill: var(--accent-color);
-    transition: fill 0.3s linear 0.05s;
-  }
+  fill: var(--accent-color);
+  transition: fill 0.3s linear 0s;
 }
 
-.heart:active {
-  .core {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear 0s;
-  }
-  .main-body {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear 0.05s;
-  }
+.heart:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear 0.05s;
 }
 
-.like-icon.is-liked {
-  .core {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear 0s;
-  }
-  .main-body {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear 0.05s;
-  }
-  .contour {
-    fill: var(--heart-color);
-    transition: fill 0.3s linear 0.06s;
-  }
+.heart:not(:hover) .core,
+.main-body {
+  transition-delay: 0.03s;
+}
 
-  .sparks {
-    animation: sparks 0.3s ease-in 0.3s 1 alternate;
-    transform: scale(110%);
-  }
+.heart:active .core {
+  fill: var(--heart-color);
+  transition: fill 0.3s linear 0s;
+}
 
-  .heart {
-    animation: big-heart 0.3s ease-in 0.1s 1 alternate;
-  }
+.heart:active .main-body {
+  fill: var(--heart-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-color);
+  transition: fill 0.3s linear 0.05s;
+}
+.like-icon.is-liked .contour {
+  fill: var(--heart-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s 1 alternate;
+  transform: scale(1.1);
+}
+
+.like-icon.is-liked .heart {
+  animation: big-heart 0.3s ease-in 0.1s 1 alternate;
 }
 
 @keyframes big-heart {
   from {
     transform: scale(1);
+    transform-origin: center;
   }
   to {
     transform: scale(1.5);
+    transform-origin: center;
   }
 }
 

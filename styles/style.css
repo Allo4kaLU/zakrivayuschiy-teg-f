@@ -32,7 +32,8 @@
 }
 
 button {
-  transition: 0.3s ease; 
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
 .header {
@@ -85,7 +86,7 @@ button {
   left: -16px;
   top: 0px;
   opacity: 0.6;
-  animation: arrow 0.5s infinite ease-in-out alternate;
+  animation: arrow 0.5s ease-in-out alternate infinite;
 }
 
 .theme-menu__button:hover {
@@ -96,7 +97,7 @@ button {
   content: "";
   display: block;
   inline-size: 0%;
-  block-size: 3px;
+  block-size: 2px;
   margin-block-start: 3px;
   background-color: var(--accent-color);
   transition: 0.3s ease;
@@ -150,7 +151,7 @@ button {
     1px 0 var(--bg-color), 0 -1px var(--bg-color);
 }
 
-@supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+@supports ((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
   .card__label {
     -webkit-text-stroke: 1px var(--bg-color);
     text-stroke: 1px var(--bg-color);
@@ -186,10 +187,14 @@ button {
   background-color: var(--bg-color);
   margin-block-end: 25px;
   border: none;
-  inline-size: 34px;
-  block-size: 34px;
+  inline-size: 54px;
+  block-size: 54px;
   margin-inline-end: 10px;
   display: flex;
+}
+
+.like-icon {
+  padding-block-start: 10px;
 }
 
 .card__like-button {
@@ -214,11 +219,19 @@ button {
 }
 
 .footer__floppy {
+  position: relative;
+  z-index: 2;
+  fill: var(--blend-color);
+  mix-blend-mode: difference;
   inline-size: 21px;
   block-size: 21px;
 }
 
 .footer__button-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
@@ -236,7 +249,7 @@ button {
 .button__text {
   position: relative;
   z-index: 2;
-  color: var(--bg-color);
+  color: var(--blend-color);
   mix-blend-mode: difference;
 }
 
@@ -244,8 +257,7 @@ button {
   outline: none;
   outline: none;
   border: 2px solid var(--accent-color);
-  outline: none;  
-  border: 2px solid var(--accent-color);
+  outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -265,10 +277,6 @@ button {
   transform: scaleX(1);
 }
 
-.buttons:hover .footer__floppy {
-  fill: var(--bg-color);
-}
-
 .card__icon-button:focus {
   outline: none;
 }
@@ -282,6 +290,11 @@ button {
 }
 
 .dialog {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 30px;
+  padding: 0;
   background-color: var(--bg-color);
   color: var(--accent-color);
   inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
@@ -290,7 +303,7 @@ button {
 .dialog__button {
   inline-size: 293px;
   block-size: 38px;
-  margin: 30px 32px;
+  margin-block-end: 32px;
 }
 
 .dialog__text {
@@ -303,13 +316,17 @@ button {
 
 .dialog__box-text {
   display: flex;
+  justify-self: start;
   gap: 20px;
-  margin: 32px;
+  margin-block-start: 32px;
+  margin-inline-start: 32px;
 }
 
 .dialog__box-text .footer__floppy {
   inline-size: 39px;
   block-size: 39px;
+  align-self: center;
+  justify-self: start;
 }
 
 .dialog::backdrop {
@@ -355,7 +372,7 @@ button {
     block-size: 28px;
   }
 
-  .button-text{
+  .button-text {
     white-space: nowrap;
   }
 }
