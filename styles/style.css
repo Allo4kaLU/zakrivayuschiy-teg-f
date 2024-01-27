@@ -39,7 +39,6 @@ button {
 .header {
   font-family: var(--accent-font), sans-serif;
   inline-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
-  min-block-size: clamp(20.1875rem, 19.2852rem + 3.8498vw, 22.75rem);
   outline: 2px solid var(--accent-color);
   background-color: var(--bg-color);
   display: grid;
@@ -54,7 +53,7 @@ button {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-transform: uppercase;
   font-weight: 400;
-  margin-block-start: clamp(6.25rem, 5.8099rem + 1.8779vw, 7.5rem);
+  margin-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   margin-block-end: 20px;
 }
 
@@ -65,11 +64,15 @@ button {
   text-transform: uppercase;
 }
 
+.header__theme-menu {
+  margin-block-end: 20px;
+}
+
 .theme-menu__list {
   display: grid;
   align-content: center;
   padding-inline-start: 20px;
-  gap: 4px;
+  gap: 5px;
 }
 
 .theme-menu__button {
@@ -77,6 +80,7 @@ button {
   background-color: inherit;
   border: none;
   font-size: 14px;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -122,7 +126,11 @@ button {
   background-color: var(--bg-color);
   display: grid;
   outline: 2px solid var(--accent-color);
-  margin-block-end: 53px;
+  margin-block-end: 55px;
+}
+
+.card:last-of-type {
+  margin-block-end: 0;
 }
 
 .card__img-label {
@@ -151,10 +159,9 @@ button {
     1px 0 var(--bg-color), 0 -1px var(--bg-color);
 }
 
-@supports ((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
+@supports (-webkit-text-stroke: 1px var(--bg-color)) {
   .card__label {
     -webkit-text-stroke: 1px var(--bg-color);
-    text-stroke: 1px var(--bg-color);
     text-shadow: none;
   }
 }
@@ -167,13 +174,9 @@ button {
 }
 
 .card__text {
-  margin: 25px 25px 5px 25px;
+  margin: 27px 25px 0px 25px;
   font-size: 18px;
   line-height: 116.667%;
-}
-
-.card__text:last-of-type {
-  margin-block-end: 0px;
 }
 
 .card__buttons {
@@ -186,20 +189,29 @@ button {
 .card__icon-button {
   background-color: var(--bg-color);
   margin-block-end: 25px;
+  padding: 0;
   border: none;
-  inline-size: 54px;
-  block-size: 54px;
-  margin-inline-end: 10px;
-  display: flex;
+  inline-size: 38px;
+  block-size: 34px;
+  margin-inline-end: 6px;
 }
 
 .like-icon {
-  padding-block-start: 10px;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
 }
 
 .card__like-button {
   inline-size: 130px;
-  block-size: 35px;
+  block-size: 38px;
   margin-block-end: 25px;
   margin-inline-end: 25px;
   font-family: var(--accent-font), sans-serif;
@@ -208,7 +220,6 @@ button {
 
 .footer {
   inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
-  block-size: clamp(11.5rem, 12.0722rem + -2.4413vw, 9.875rem);
   display: grid;
   justify-content: center;
 }
@@ -216,6 +227,8 @@ button {
 .footer__button {
   width: 335px;
   height: 55px;
+  margin-block-start: 52px;
+  margin-block-end: clamp(6.375rem, 6.309rem + 0.2817vw, 6.5625rem);
 }
 
 .footer__floppy {
@@ -255,9 +268,6 @@ button {
 
 .buttons:focus {
   outline: none;
-  outline: none;
-  border: 2px solid var(--accent-color);
-  outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -275,14 +285,6 @@ button {
 
 .buttons:hover::before {
   transform: scaleX(1);
-}
-
-.card__icon-button:focus {
-  outline: none;
-}
-
-.card__icon-button:focus-visible {
-  outline: 2px solid var(--accent-color);
 }
 
 .sparks {
@@ -304,6 +306,11 @@ button {
   inline-size: 293px;
   block-size: 38px;
   margin-block-end: 32px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 90%;
+  text-transform: uppercase;
 }
 
 .dialog__text {
@@ -329,7 +336,11 @@ button {
   justify-self: start;
 }
 
-.dialog::backdrop {
+.dialog__modal {
+  border: 2px solid var(--accent-color);
+}
+
+.dialog__modal::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
 
@@ -362,6 +373,10 @@ button {
 }
 
 @media (width <= 375px) {
+  .footer__button-text {
+    display: grid;
+    align-items: center;
+  }
   .footer__button {
     inline-size: 306px;
     block-size: 84px;
@@ -370,6 +385,7 @@ button {
   .footer__floppy {
     inline-size: 28px;
     block-size: 28px;
+    justify-self: center;
   }
 
   .button-text {

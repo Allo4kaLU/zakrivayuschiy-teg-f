@@ -22,44 +22,57 @@
   }
 }
 
+.heart {
+  transform-origin: center;
+}
+
+.core {
+  transition: fill 0.3s linear 0s;
+}
+
+.main-body {
+  transition: fill 0.3s linear 0.05s;
+}
+
+.contour {
+  transition: fill 0.3s linear 0.06s;
+}
+
 .heart:hover .core {
   cursor: pointer;
   fill: var(--accent-color);
-  transition: fill 0.3s linear 0s;
 }
 
 .heart:hover .main-body {
   fill: var(--accent-color);
-  transition: fill 0.3s linear 0.05s;
 }
 
-.heart:not(:hover) .core,
-.main-body {
+.heart:not(:hover) .core {
   transition-delay: 0.03s;
+}
+
+.heart:not(:hover) .main-body {
+  transition-delay: 0s;
 }
 
 .heart:active .core {
   fill: var(--heart-color);
-  transition: fill 0.3s linear 0s;
 }
 
 .heart:active .main-body {
   fill: var(--heart-color);
-  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .core {
   fill: var(--heart-color);
-  transition: fill 0.3s linear 0s;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-color);
-  transition: fill 0.3s linear 0.05s;
 }
+
 .like-icon.is-liked .contour {
   fill: var(--heart-color);
-  transition: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .sparks {
