@@ -153,7 +153,6 @@ button {
   font-size: 14px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  text-shadow: 0 0 10px var(--bg-color);
   justify-self: end;
   text-shadow: -1px 0 var(--bg-color), 0 1px var(--bg-color),
     1px 0 var(--bg-color), 0 -1px var(--bg-color);
@@ -251,8 +250,7 @@ button {
 }
 
 .buttons {
-  position: relative;
-  border: none;
+  position: relative;  
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color);
   overflow: hidden;
