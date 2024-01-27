@@ -250,7 +250,7 @@ button {
 }
 
 .buttons {
-  position: relative;  
+  position: relative;
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color);
   overflow: hidden;
