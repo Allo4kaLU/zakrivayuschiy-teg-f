@@ -158,9 +158,10 @@ button {
     1px 0 var(--bg-color), 0 -1px var(--bg-color);
 }
 
-@supports (-webkit-text-stroke: 1px var(--bg-color)) {
+@supports((text-stroke: 1px var(--bg-color)) or -webkit-text-stroke: 1px var(--bg-color)) {
   .card__label {
     -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
     text-shadow: none;
   }
 }
@@ -297,7 +298,7 @@ button {
   padding: 0;
   background-color: var(--bg-color);
   color: var(--accent-color);
-  inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+  inline-size: 100%;
 }
 
 .dialog__button {
@@ -335,6 +336,7 @@ button {
 }
 
 .dialog__modal {
+  inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
   border: 2px solid var(--accent-color);
 }
 

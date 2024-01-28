@@ -28,10 +28,12 @@
 
 .core {
   transition: fill 0.3s linear 0s;
+  fill: transparent;
 }
 
 .main-body {
   transition: fill 0.3s linear 0.05s;
+  fill: transparent;
 }
 
 .contour {
@@ -44,6 +46,11 @@
 }
 
 .heart:hover .main-body {
+  fill: var(--accent-color);
+}
+
+.heart:not(:hover) .contour {
+  transition: fill 0.1s linear 0s;
   fill: var(--accent-color);
 }
 
